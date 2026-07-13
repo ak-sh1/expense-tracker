@@ -25,7 +25,8 @@ def show_menu():
     print("2. View expenses")
     print("3. View total")
     print("4. Delete expense")
-    print("5. Exit")
+    print("5. View totals by category")
+    print("6. Exit")
 
 
 def add_expense(expenses):
@@ -120,6 +121,27 @@ def delete_expense(expenses):
         f"${deleted_expense['amount']:.2f}"
     )
 
+def view_category_totals(expenses):
+    if not expenses:
+        print("No expenses found.")
+        return
+
+    category_totals = {}
+
+    for expense in expenses:
+        category = expense.get("category", "Other")
+        amount = expense["amount"]
+
+        if category in category_totals:
+            category_totals[category] += amount
+        else:
+            category_totals[category] = amount
+
+    print("\nTotals by Category")
+
+    for category, total in category_totals.items():
+        print(f"{category}: ${total:.2f}")
+
 
 def main():
     expenses = load_expenses()
@@ -137,10 +159,12 @@ def main():
         elif choice == "4":
             delete_expense(expenses)
         elif choice == "5":
+            view_category_totals(expenses)
+        elif choice == "6":
             print("Goodbye!")
             break
         else:
-            print("Invalid option. Please choose 1, 2, 3, 4, or 5.")
+            print("Invalid option. Please choose a number from 1 to 6.")
 
 
 if __name__ == "__main__":
