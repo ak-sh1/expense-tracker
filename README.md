@@ -34,7 +34,7 @@ expense-tracker/
 1. Clone the repository:
 
 ```bash
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/ak-sh1/expense-tracker.git
 ```
 
 2. Open the project folder:
