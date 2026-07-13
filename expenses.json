@@ -1,0 +1,17 @@
+[
+    {
+        "description": "phone",
+        "amount": 1000.0
+    },
+    {
+        "description": "clothes",
+        "category": "shopping",
+        "amount": 400.0
+    },
+    {
+        "description": "japan",
+        "category": "travel",
+        "amount": 3000.0,
+        "date": "2026-07-13"
+    }
+]
